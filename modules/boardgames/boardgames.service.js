@@ -26,3 +26,21 @@ boardgamesService.addGame = (gameData) => {
     return newGame;
 };
 
+boardgamesService.updateGame = (id, updateData) => {
+    const index = boardgames.findIndex (game => game.id === parseInt(id));
+    if (index !== -1){
+        boardgames[index] = { ...boardgames[index], ...updateData, id: boardgames[index].id };
+        return boardgames[index];
+    }
+    return null;
+};
+
+boardgamesService.deleteGame = (id) => {
+    const index = boardgames.findIndex(game => game.id === parseInt(id));
+    if (index !== -1){
+        const deletedGame = boardgames.splice(index, 1);
+    }
+    return null;
+};
+
+export default boardgamesService
