@@ -10,7 +10,7 @@ boardgamesController.getGames= (req, res) => {
 }
 
 boardgamesController.getGame= (req, res) => {
-    const idGame = req.params.idTeam;
+    const idGame = req.params.id;
     const game = boardgamesService.getGame(idGame);
     res.status(200).send ({
         game: game
