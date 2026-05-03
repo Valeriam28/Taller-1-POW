@@ -11,15 +11,15 @@ boardgamesService.getGame = (id) =>{
     return boardgames.find(game=> game.id === parseInt(id));
 };
 
-boardgamesService.addGame = (gameData) => {
-    const newGame={
-        name: gameData.name,
+boardgamesService.addGame = (name, minP, maxP, aveDuration, purchaseDate,status) => {
+    const newGame = {
+        name: name,
         id: countid,
-        minP: gameData.minP,
-        maxP: gameData.maxP,
-        aveDuration: gameData.aveDuration,
-        purchaseDate: gameData.purchaseDate,
-        status: gameData.status   
+        minP: minP,
+        maxP: maxP,
+        aveDuration: aveDuration,
+        purchaseDate: purchaseDate,
+        status: status   
     };
     boardgames.push(newGame);
     countid++;
